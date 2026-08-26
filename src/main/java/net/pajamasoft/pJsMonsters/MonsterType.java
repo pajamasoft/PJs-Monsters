@@ -11,15 +11,15 @@ import java.util.Set;
 public enum MonsterType {
 
     BABY(2,Set.of(EntityType.CREEPER,EntityType.SKELETON,EntityType.SPIDER, EntityType.ENDERMAN)),
-    BRUTE(2,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.WITHER_SKELETON,EntityType.PIGLIN)),
+    BRUTE(1,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.WITHER_SKELETON,EntityType.PIGLIN)),
     COLOSSUS(6,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.SPIDER)),
     COMBO(3,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.CREEPER,EntityType.SPIDER,EntityType.HUSK)),
     CREEPER_JOCKEY(2,EntityType.SPIDER),
     FAST(1,Set.of(EntityType.ZOMBIE,EntityType.PIGLIN,EntityType.PIGLIN_BRUTE,EntityType.SPIDER,EntityType.SKELETON,EntityType.ENDERMAN)),
     GHOST_SOLDIER(2,EntityType.SKELETON),
     JUMPING_SPIDER(1,Set.of(EntityType.SPIDER)),
-    KNIGHT(2,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.PIGLIN)),
-    FROZEN_KNIGHT(2,EntityType.STRAY),
+    KNIGHT(1,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.PIGLIN)),
+    FROZEN_KNIGHT(1,EntityType.STRAY),
     ROTTING_CORPSE(2,Set.of(EntityType.ZOMBIE,EntityType.SKELETON)),
     SEA_COMMANDER(4,EntityType.DROWNED),
     TARANTULA(3,EntityType.SPIDER),
