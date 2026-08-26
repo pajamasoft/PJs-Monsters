@@ -1,0 +1,13 @@
+name: PJsMonsters
+version: '${version}'
+
+main: net.pajamasoft.pJsMonsters.PJsMonsters
+api-version: '26.2'
+load: POSTWORLD
+authors: [ pajamasoft ]
+description: PJ's Custom Monsters
+commands:
+  monsters:
+    description: Main command for PJ's Monsters
+    usage: /monsters
+    aliases: [pjm,monster]
