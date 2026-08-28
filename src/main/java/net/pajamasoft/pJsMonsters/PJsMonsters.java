@@ -1,3 +1,11 @@
+/*
+ * ---------------------------------------------------
+ *  PJ's Monsters
+ *      Custom monsters for survival Minecraft
+ * ---------------------------------------------------
+ * by Nathan Cook @pajamasoft, nathan@pajamasoft.net
+ * ---------------------------------------------------
+ */
 package net.pajamasoft.pJsMonsters;
 
 import net.pajamasoft.pjcomputers.PJComputers;
@@ -61,7 +69,7 @@ public final class PJsMonsters extends JavaPlugin {
             mon.setCustomName(c+format(type.name())+" "+format(monType.name()));
             mon.setCustomNameVisible(false);
 
-            NamespacedKey key = new NamespacedKey("PJsMonsters","PJsMonster");
+            NamespacedKey key = new NamespacedKey(this,"PJsMonster");
             mon.getPersistentDataContainer().set(key, PersistentDataType.STRING, monType.name());
 
             switch(monType){
@@ -184,7 +192,7 @@ public final class PJsMonsters extends JavaPlugin {
                     mon.setCustomName(c+"Tarantula");
                     mon.getAttribute(Attribute.MAX_HEALTH).setBaseValue(40);
                     mon.setHealth(40);
-                    mon.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(1);
+                    mon.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.2);
                     mon.getAttribute(Attribute.SCALE).setBaseValue(1.5);
                     return;
                 }
