@@ -2,7 +2,6 @@ package net.pajamasoft.pJsMonsters;
 
 import net.pajamasoft.pjcomputers.PJPlayer;
 import net.pajamasoft.pjcomputers.TitleType;
-import net.pajamasoft.pjenchants.Enchant;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.enchantments.Enchantment;
@@ -18,9 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static net.pajamasoft.pJsMonsters.PJsMonsters.pjc;
-import static net.pajamasoft.pJsMonsters.PJsMonsters.pje;
 import static net.pajamasoft.pjLib.PJLib.*;
-import static net.pajamasoft.pjenchants.PJEnchants.genEnchantingScroll;
 
 public class listener implements Listener {
 
@@ -34,7 +31,6 @@ public class listener implements Listener {
     @EventHandler
     public void onMobKill(EntityDeathEvent e){
         LivingEntity ent = e.getEntity();
-        EntityType type = ent.getType();
 
         Player p = ent.getKiller();
 
@@ -81,6 +77,9 @@ public class listener implements Listener {
                                     pjp.unlockTitle(TitleType.COMMANDER);
                         }
                     }
+                    case ROTTING_CORPSE -> {
+                        drops.removeIf(i->i.getType() == Material.ZOMBIE_HEAD || i.getType() == Material.SKELETON_SKULL);
+                    }
                 }
             }
         }
@@ -94,7 +93,7 @@ public class listener implements Listener {
 
         EntityType type = e.getEntityType();
         final List<EntityType> excluded = Arrays.asList(EntityType.ENDER_DRAGON,EntityType.WITHER,EntityType.SLIME,EntityType.MAGMA_CUBE);
-        final List<EntityType> cantBeSmaller = Arrays.asList(EntityType.PHANTOM,EntityType.CAVE_SPIDER,EntityType.SILVERFISH,EntityType.ENDERMITE);
+        final List<EntityType> cantBeSmaller = Arrays.asList(EntityType.PHANTOM,EntityType.CAVE_SPIDER,EntityType.SILVERFISH,EntityType.ENDERMITE,EntityType.VEX);
 
         if(excluded.contains(type))
             return;
@@ -143,6 +142,8 @@ public class listener implements Listener {
 
         for(MonsterType monType:MonsterType.values()){
             if(percentChance(monType.getSpawnChance())) {
+                if(isBaby && monType == MonsterType.BABY)
+                    continue;
                 pjm.makeSpecialMob(mon,monType);
             }
         }

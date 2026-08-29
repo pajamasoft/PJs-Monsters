@@ -3,12 +3,9 @@ package net.pajamasoft.pJsMonsters;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
-
-import java.io.File;
 
 public class commands implements CommandExecutor {
 

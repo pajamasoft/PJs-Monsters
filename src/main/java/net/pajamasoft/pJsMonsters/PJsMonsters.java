@@ -16,10 +16,12 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ArmorMeta;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.trim.ArmorTrim;
 import org.bukkit.inventory.meta.trim.TrimMaterial;
@@ -100,7 +102,15 @@ public final class PJsMonsters extends JavaPlugin {
                     mon.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.19);
                     mon.getAttribute(Attribute.ARMOR).setBaseValue(4);
                     mon.getAttribute(Attribute.KNOCKBACK_RESISTANCE).setBaseValue(1);
-                    mon.getEquipment().setItemInMainHand(pjc.getItem("titan_greatsword"));
+
+                    ItemStack sword = newItem(Material.STONE_SWORD,"§7§lTitan Greatsword");
+                    ItemMeta swordmeta = sword.getItemMeta();
+                    swordmeta.addAttributeModifier(Attribute.ATTACK_DAMAGE, new AttributeModifier(new NamespacedKey(this,"attack"),8, AttributeModifier.Operation.ADD_NUMBER));
+                    swordmeta.addAttributeModifier(Attribute.ATTACK_SPEED, new AttributeModifier(new NamespacedKey(this,"speed"),-3, AttributeModifier.Operation.ADD_NUMBER));
+                    sword.setItemMeta(swordmeta);
+                    if(pje != null)
+                        pje.enchant(sword, Enchant.GRAVITY,1);
+                    mon.getEquipment().setItemInMainHand(sword);
                     return;
                 }
                 case UNSTABLE -> {
@@ -142,7 +152,7 @@ public final class PJsMonsters extends JavaPlugin {
                     mon.getEquipment().setChestplate(new ItemStack(Material.NETHERITE_CHESTPLATE));
                     mon.getEquipment().setLeggings(new ItemStack(Material.NETHERITE_LEGGINGS));
                     mon.getEquipment().setBoots(new ItemStack(Material.NETHERITE_BOOTS));
-                    ItemStack sword = pjc.newItem(Material.DIAMOND_SWORD,"§cZombie Commander Sword");
+                    ItemStack sword = newItem(Material.DIAMOND_SWORD,"§cZombie Commander Sword");
                     sword.addEnchantment(Enchantment.SHARPNESS,1);
                     if(pje != null)
                         pje.enchant(sword,Enchant.UNHOLY,1);
@@ -159,6 +169,7 @@ public final class PJsMonsters extends JavaPlugin {
                     mon.setCustomName(c+"§oFast "+format(type.name()));
                     mon.getAttribute(Attribute.MAX_HEALTH).setBaseValue(mon.getAttribute(Attribute.MAX_HEALTH).getValue()*0.75);
                     mon.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(mon.getAttribute(Attribute.MOVEMENT_SPEED).getValue()*1.6);
+                    mon.getEquipment().setItemInMainHand(null);
                     return;
                 }
                 case KNIGHT -> {
