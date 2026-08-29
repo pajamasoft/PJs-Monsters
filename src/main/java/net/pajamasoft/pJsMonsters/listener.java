@@ -55,7 +55,7 @@ public class listener implements Listener {
             String str = ent.getPersistentDataContainer().get(key, PersistentDataType.STRING);
             if (str.startsWith("SIZE_")) {
                 double scale = Double.parseDouble(str.substring(5));
-                e.setDroppedExp((int) (e.getDroppedExp() * scale) + 1);
+                e.setDroppedExp((int) (e.getDroppedExp() * (1 + Math.abs(1-scale))) + 1);
             }
             try {
                 monType = MonsterType.valueOf(str);
