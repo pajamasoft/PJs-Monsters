@@ -35,7 +35,7 @@ Unstable mobs have TNT strapped to their heads and they're ready to set it off. 
 * Zombie
 
 ### Tarantula (III)
-Large, bulky, and fast.
+A larger and more powerful spider.
 
 ### Colossus (V)
 These mobs are true giants, but will reward generous amounts of XP when slain.
