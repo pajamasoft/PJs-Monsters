@@ -29,7 +29,7 @@ Brutes are large, slow, and bulky, wielding an axe.
 ### Rotting Corpse (II)
 It's hard to tell if these are zombies or skeletons. Likely something inbetween.
 
-### Unstable (II)
+### Unstable 🧨 (II)
 Unstable mobs have TNT strapped to their heads and they're ready to set it off. They'll set you on fire with flint & steel and explode on death.
 * Skeleton
 * Zombie
