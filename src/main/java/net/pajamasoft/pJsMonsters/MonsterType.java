@@ -1,18 +1,13 @@
 package net.pajamasoft.pJsMonsters;
 
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Skeleton;
-import org.bukkit.entity.Snowman;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 public enum MonsterType {
 
-    BABY(2,Set.of(EntityType.CREEPER,EntityType.SKELETON,EntityType.SPIDER, EntityType.ENDERMAN)),
-    BRUTE(1,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.WITHER_SKELETON,EntityType.PIGLIN)),
-    COLOSSUS(6,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.SPIDER)),
+    BABY(1,Set.of(EntityType.CREEPER,EntityType.SKELETON,EntityType.SPIDER, EntityType.ENDERMAN)),
+    BRUTE(2,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.WITHER_SKELETON,EntityType.PIGLIN)),
+    COLOSSUS(5,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.SPIDER)),
     COMBO(3,Set.of(EntityType.ZOMBIE,EntityType.SKELETON,EntityType.CREEPER,EntityType.SPIDER,EntityType.HUSK)),
     CREEPER_JOCKEY(2,EntityType.SPIDER),
     FAST(1,Set.of(EntityType.ZOMBIE,EntityType.PIGLIN,EntityType.PIGLIN_BRUTE,EntityType.SPIDER,EntityType.SKELETON,EntityType.ENDERMAN)),

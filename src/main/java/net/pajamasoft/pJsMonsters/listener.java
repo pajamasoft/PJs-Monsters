@@ -63,7 +63,7 @@ public class listener implements Listener {
                 return;
             }
             int tier = monType.getTier();
-            e.setDroppedExp(e.getDroppedExp() + 3 * tier);
+            e.setDroppedExp(e.getDroppedExp() + (int)Math.pow(2,tier));
             List<ItemStack> drops = e.getDrops();
 
             if(pjc != null && p != null) {

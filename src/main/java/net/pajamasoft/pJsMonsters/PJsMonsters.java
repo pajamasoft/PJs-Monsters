@@ -234,8 +234,8 @@ public final class PJsMonsters extends JavaPlugin {
                 }
                 case COLOSSUS -> {
                     mon.getAttribute(Attribute.SCALE).setBaseValue(10);
-                    mon.getAttribute(Attribute.MAX_HEALTH).setBaseValue(300);
-                    mon.setHealth(300);
+                    mon.getAttribute(Attribute.MAX_HEALTH).setBaseValue(500);
+                    mon.setHealth(500);
                     mon.getAttribute(Attribute.MOVEMENT_SPEED).setBaseValue(0.1);
                     mon.getAttribute(Attribute.ARMOR).setBaseValue(2);
                     mon.getAttribute(Attribute.KNOCKBACK_RESISTANCE).setBaseValue(1);

@@ -22,10 +22,10 @@ public class commands implements CommandExecutor {
             Player p = (Player) sender;
             if(p.isOp()){
                 if(args[0].equalsIgnoreCase("summon")){
-                    MonsterType monType = MonsterType.valueOf(args[2].toUpperCase());
+                    MonsterType monType = MonsterType.valueOf(args[1].toUpperCase());
                     EntityType type = (EntityType)monType.getBaseTypes().toArray()[0];
-                    if(args.length > 3)
-                        type = EntityType.valueOf(args[3].toUpperCase());
+                    if(args.length > 2)
+                        type = EntityType.valueOf(args[2].toUpperCase());
                     Monster mon = (Monster)p.getWorld().spawnEntity(p.getLocation().add(p.getLocation().getDirection()),type);
                     pjm.makeSpecialMob(mon,monType);
                 }
